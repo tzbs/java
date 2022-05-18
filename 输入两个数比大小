@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Sample4
+{
+    public static void main(String[] args)
+    {
+        System.out.println("请输入两个数");
+        Scanner input=new Scanner(System.in);
+        int num1=input.nextInt();
+        int num2=input.nextInt();
+        if(num1>num2)
+        System.out.println("你先输入，你赢啦");
+        System.out.println("我后输入，反而是我赢啦");
+    }
+}
