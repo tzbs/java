@@ -1,0 +1,51 @@
+public class Sample1
+{
+    public static void swap(int a,int b)
+    {
+        int temp;
+        temp=a;
+        a=b;
+        b=temp;
+    }
+    public static void main(String[] args)
+    {
+        int a=8;
+        int b=6;
+        System.out.println("调用前：");
+        System.out.println("a= "+a);
+        System.out.println("b= "+b);
+        swap(a,b); //调用静态方法不需要对象的引用
+        System.out.println("调用后：");
+        System.out.println("a= "+a);
+        System.out.println("b= "+b);
+    }
+    //这里调换是失败的。
+}
+
+
+//第二种
+public class Sample2
+{
+    int a;
+    int b;
+    public static void swap(Sample2 A)
+    {
+        int tmp;
+        tmp=A.a;
+        A.a=A.b;
+        A.b=tmp;
+    }
+    public static void main(String[] args)
+    {
+        Sample2 A=new Sample2();
+        A.a=8;
+        A.b=6;
+        System.out.println("调用前：");
+        System.out.println("a= "+A.a);
+        System.out.println("b= "+A.b);
+        swap(A);
+        System.out.println("调用后：");
+        System.out.println("a= "+A.a);
+        System.out.println("b= "+A.b);
+    }
+}
