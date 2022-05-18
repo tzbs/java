@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Sample3
+{
+    public static void main(String[] args)
+    {
+        System.out.println("请输入一个整数：");
+        Scanner input=new Scanner(System.in);
+        int num1=input.nextInt();
+        int sum=0;
+        while(num1>0)
+        {
+            sum+=num1%10;
+            num1/=10;
+        }
+        System.out.println("该数的和是："+sum);
+    }
+}
