@@ -1,0 +1,19 @@
+public class OperatorDemo08
+{
+    public static void main(String[] args)
+    {
+        int num1=6;
+        int num2=8;
+        System.out.println("交换前：");
+        System.out.println("num1= "+num1);
+        System.out.println("num2= "+num2);
+        int temp;
+        temp=num1;
+        num1=num2;
+        num2=temp;
+        System.out.println("交换后：");
+        System.out.println("num1= "+num1);
+        System.out.println("num2= "+num2);
+        //这里交换是没有问题的，当我们学过对象后，给一种新的交换方式。
+    }
+}
