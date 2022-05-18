@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Sample6
+{
+    public static void main(String[] args)
+    {
+        int kk=1;
+        while(kk!=0)
+        {
+            System.out.println("请输入一个整数，我能知道它是奇数还是偶数，不信试一试呀");
+            Scanner input=new Scanner(System.in);
+            int num=input.nextInt();
+            if(num%2==0)
+                System.out.println("这个数是"+num+" ,是偶数");
+            else
+            System.out.println("这个数是"+num+" ,是奇数");
+            System.out.println("你还玩吗");
+            System.out.println("你要是还想玩，就输入一个非零数字，否则输入0就好啦");
+            kk=input.nextInt();
+        }
+        System.out.println("再见啦，欢迎下次找我玩呀");
+    }
+}
