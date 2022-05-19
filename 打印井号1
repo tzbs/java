@@ -1,0 +1,23 @@
+public class ForDemo05
+{
+    public static void main(String[] args)
+    {
+        int i=0;
+        int j=0;
+        int k=15;
+        int m=0;
+        while(i<10)
+        {
+            j=m;
+            while(j<k)
+            {
+                System.out.print("# ");
+                j++;
+            }
+            System.out.println();
+            k--;
+            m++;
+            i++;
+        }
+    }
+}
