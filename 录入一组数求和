@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class WhileDemo03
+{
+    public static void main(String[] args)
+    {
+        Scanner input=new Scanner(System.in);
+        int sum=0;
+        int num=0;
+        boolean flag=false;
+        for(int i=0;i<5;i++)
+        {
+            System.out.println("请录入一个数");
+            num=input.nextInt();
+            if(num<0)
+            {
+                flag=true;
+                break;
+            }
+            sum+=num;
+        }
+        if(flag)
+        {
+            System.out.println("您输入了负值"+num+"，输入错误");
+        }
+        else
+        {
+            System.out.println("和为："+sum);
+        }
+    }
+}
