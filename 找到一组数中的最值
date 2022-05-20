@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class ArrayDemo05
+{
+    public static void main(String[] args)
+    {
+        int [] arr=new int[20];
+        Scanner input=new Scanner(System.in);
+        int num=0;
+        int i=0;
+        System.out.println("请输入20个数字");
+        while(i<20)
+        {
+
+            arr[i]=input.nextInt();
+            i++;
+        }
+        int max=arr[0];
+        int j=0;
+        while(j<20)
+        {
+            System.out.print(arr[j]+" ");
+            max=max<arr[j]?arr[j]:max;
+            j++;
+        }
+        System.out.println();
+        System.out.println("这20个数中最大的是"+max);
+    }
+}
