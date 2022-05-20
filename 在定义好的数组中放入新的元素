@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class ArrayDemo08
+{
+    public static void main(String[] args)
+    {
+        String[] arr={"平凡的世界","钢铁是怎样炼成的","红楼梦","聊斋志异","苏菲的世界",null};
+        System.out.println(arr.length);
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==null)
+            {
+                arr[i]="金瓶梅";
+            }
+        }
+        System.out.println(arr.length);
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
