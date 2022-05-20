@@ -1,0 +1,53 @@
+public class ArrayDemo11
+{
+    public static void main(String[] args)
+    {
+        String[] arr={"郭富城","刘德华","林正英","周星驰","吴孟达","梁朝伟","张国荣","黎明","成龙","李小龙","巩俐"};
+        String[] arr1=new String[arr.length];
+        for(int i=0;i<arr.length;i++)
+        {
+            arr1[i]=arr[i];
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+        int index=-1;
+        //Random choose=new Random();
+        //String yuansu=choose.nextInt(arr);
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i].equals("张国荣"))
+            {
+                index=i;
+                break;
+            }
+        }
+        for(int i=index;i<arr.length-1;i++)
+        {
+            arr[i]=arr[i+1];
+        }
+        System.out.println();
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+        boolean tmp=false;
+        int i=0;
+        for(i=0;i<arr1.length;i++)
+        {
+            tmp=false;
+            for(int j=0;j<arr.length;j++)
+            {
+                if(arr1[i]==arr[j])
+                {
+                    tmp = true;
+                    break;
+                }
+            }
+            if(tmp==false)
+                break;
+        }
+        System.out.println("\n"+"删除的明星是"+arr1[i]);
+    }
+}
