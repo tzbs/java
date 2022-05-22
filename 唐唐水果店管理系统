@@ -1,0 +1,138 @@
+import java.util.Scanner;
+public class FruitManagement
+{
+    public static void main(String[] args)
+    {
+        String[] fruitNames={"西瓜","葡萄","草莓","荔枝","香蕉","龙蛇果","桂圆","火龙果","柚子","甘蔗"};
+        int[] fruitPrices={1,5,7,15,5,20,20,18,7,5};
+        int[] fruitCounts={2000,500,300,400,600,200,500,350,5000,10000};
+        while(true)
+        {
+            int num=choose();
+            switch(num)
+            {
+                case 1:
+                    show(fruitNames,fruitPrices,fruitCounts);
+                    break;
+                case 2:
+                    updateCount(fruitNames,fruitCounts);
+                    break;
+                case 3:
+                    updatePrices(fruitNames,fruitPrices);
+                    break;
+                case 4:
+                    System.out.println("谢谢您的光临！");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("选择错误，请重新选择");
+            }
+        }
+    }
+    public static int choose()
+    {
+        System.out.println("-----欢迎来到唐唐水果店管理系统-----");
+        System.out.println("1:查看水果信息");
+        System.out.println("2:修改水果库存");
+        System.out.println("3:修改水果价格");
+        System.out.println("4:退出系统");
+        System.out.print("请输入你要执行的操作,输入1~4中的某个数字就好啦");
+        System.out.println();
+        Scanner input=new Scanner(System.in);
+        int num=input.nextInt();
+        return num;
+    }
+    public static void show(String[] fruitNames,int[] fruitPrices,int[] fruitCounts)
+    {
+        System.out.println("-----查看水果清单-----");
+        int totalCounts = 0;
+        int totalPrices = 0;
+        System.out.println("水果名称" + " " + "水果价格（元/斤）" + " " + "水果库存（斤）");
+        for (int i = 0; i < fruitNames.length; i++) {
+            totalCounts += fruitCounts[i];
+            totalPrices += fruitPrices[i] * fruitCounts[i];
+            System.out.println(fruitNames[i] + "\t\t" + fruitPrices[i] + "\t\t\t\t" + fruitCounts[i]);
+        }
+        System.out.println("总库存" + totalCounts + "斤\t" + "总价格" + totalPrices + "元");
+    }
+    public static void updateCount(String[] fruitNames,int[] fruitCounts)
+    {
+        Scanner input = new Scanner(System.in);
+        String fruitName="西瓜";
+        boolean tmp=true;
+        int ii=0;
+        while(tmp)
+        {
+            System.out.println("请输入要修改库存的水果名称：");
+             fruitName = input.next();
+            //int  i = 0;
+            ii=0;
+            while (ii < fruitNames.length)
+            {
+                if (fruitNames[ii].equals(fruitName)) {
+                    tmp = false;
+                    break;
+                }
+                ii++;
+                if (ii == fruitNames.length)
+                {
+                    System.out.println("对不起，我们找不到您输入的这种水果");
+                    System.out.println("请问您是否继续输入，如果是，请输入1，否则输入0");
+                    int j=input.nextInt();
+                    if(j!=1&&j!=0)
+                    {
+                        System.out.println("您的输入无效，请重新输入");
+                        System.out.println("您可以选择输入0或1，如果您输入1，继续查找水果，如果您输入0或其他数字我们就退出查找：");
+                        j=input.nextInt();
+                        if(j==1)
+                        {
+                            tmp=true;
+                            break;
+                        }
+                        else
+                        {
+                            return ;
+                        }
+                    }
+                    else if(j==0)
+                    {
+                        return ;
+                    }
+                    else
+                    {
+                        tmp=true;
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println("请输入修改后的库存：");
+        int count=input.nextInt();
+        for(int i=0;i<fruitNames.length;i++)
+        {
+            if(fruitNames[i].equals(fruitName))
+            {
+                fruitCounts[i]=count;
+                break;
+            }
+        }
+        System.out.println("修改成功!");
+    }
+    public static void updatePrices(String[] fruitNames,int[] fruitPrices)
+    {
+        System.out.println("请输入要修改价格的水果名称:");
+        Scanner input=new Scanner(System.in);
+        String fruitName=input.next();
+        System.out.println("请输入修改后的价格：");
+        int price=input.nextInt();
+        for(int i=0;i<fruitNames.length;i++)
+        {
+            if(fruitNames[i].equals(fruitName))
+            {
+                fruitPrices[i]=price;
+                break;
+            }
+        }
+        System.out.println("修改成功！");
+    }
+}
