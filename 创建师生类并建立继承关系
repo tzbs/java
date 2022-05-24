@@ -1,0 +1,103 @@
+public abstract class Person
+{
+    private String name;
+    public String getName()
+    {
+        return name;
+    }
+    public void setName(String name)
+    {
+        this.name=name;
+    }
+    public abstract void sayHello();
+}
+
+public abstract  class Teacher extends Person
+{
+    public abstract void teach();
+}
+
+
+public abstract class Student extends Person
+{
+    public abstract void study();
+}
+
+public class JavaTeacher extends Teacher
+{
+    @Override
+    public void teach()
+    {
+        System.out.println("正在教Java");
+    }
+    @Override
+    public void sayHello()
+    {
+        System.out.println("Hello大家好，我是"+getName()+",我教Java");
+    }
+}
+
+public class PythonTeacher extends Teacher
+{
+    @Override
+    public void teach()
+    {
+        System.out.println("正在教Python");
+    }
+    @Override
+    public void sayHello()
+    {
+        System.out.println("Hello大家好，我是"+getName()+",我教Python");
+    }
+}
+
+public class JavaStudent extends Student
+{
+    @Override
+    public void study()
+    {
+        System.out.println("正在学习Java");
+    }
+    @Override
+    public void sayHello()
+    {
+        System.out.println("Hello 大家好，我叫"+getName()+",我学的Java");
+    }
+}
+
+public class PythonStudent extends Student
+{
+    @Override
+    public void study()
+    {
+        System.out.println("正在学习Python");
+    }
+    @Override
+    public void sayHello()
+    {
+        System.out.println("Hello大家好，我是"+getName()+",我学的Python");
+    }
+}
+
+public class MyTest
+{
+    public static void main(String[] args)
+    {
+        JavaStudent js=new JavaStudent();
+        js.setName("杨过");
+        js.sayHello();
+        js.study();
+        PythonStudent ps=new PythonStudent();
+        ps.setName("小龙女");
+        ps.sayHello();
+        ps.study();
+        JavaTeacher jt=new JavaTeacher();
+        jt.setName("郭靖");
+        jt.sayHello();
+        jt.teach();
+        PythonTeacher pt=new PythonTeacher();
+        pt.setName("黄蓉");
+        pt.sayHello();
+        pt.teach();
+    }
+}
