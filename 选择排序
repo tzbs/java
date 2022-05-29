@@ -1,0 +1,55 @@
+import java.util.Random;
+public class SelectionSort
+{
+    public static void main(String[] args)
+    {
+        int[] arr1=new int[500];
+        int k = 0;
+        Random ss = new Random();
+        while (k < arr1.length)
+        {
+            arr1[k] = ss.nextInt(1000);
+            k++;
+        }
+        int ee=0;
+        int oo=0;
+        while(ee<arr1.length)
+        {
+            System.out.print(arr1[ee] + "   ");
+            oo++;
+            if (oo % 10 == 0)
+                System.out.println();
+            ee++;
+        }
+        System.out.println();
+        int tmp = 0;
+        int i, j;
+        i=0;
+        j=0;
+        while (i < arr1.length - 1)
+        {
+            j = i + 1;
+            while (j < arr1.length)
+            {
+                if (arr1[i] > arr1[j])
+                {
+                    tmp = arr1[i];
+                    arr1[i] = arr1[j];
+                    arr1[j] = tmp;
+                }
+                j++;
+            }
+            i++;
+        }
+        int t = 0;
+        int cc = 0;
+        while (t < arr1.length)
+        {
+            System.out.print(arr1[t] + "   ");
+            cc++;
+            if (cc % 10 == 0)
+                System.out.println();
+            t++;
+        }
+    }
+}
