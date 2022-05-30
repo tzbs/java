@@ -1,0 +1,53 @@
+import java.util.Random;
+public class BubbleSort
+{
+    public static void main(String[] args)
+    {
+        int i=0;
+        int j=0;
+        int cc=0;
+        Random oo=new Random();
+        int[] arr=new int[500];
+        while(i<arr.length)
+        {
+            arr[i]=oo.nextInt(1000);
+            i++;
+        }
+        System.out.println("原来的数：");
+        while(j<arr.length)
+        {
+            System.out.print(arr[j]+"   ");
+            cc++;
+            if(cc%10==0)
+                System.out.println();
+            j++;
+        }
+        int tmp=0;
+        int xx=0;
+        int gg=arr.length-1;
+        while(gg>=0)
+        {
+            for(xx=0;xx<gg;xx++)
+            {
+                if(arr[xx]>arr[gg])
+                {
+                    tmp=arr[xx];
+                    arr[xx]=arr[gg];
+                    arr[gg]=tmp;
+                }
+            }
+            gg--;
+        }
+        System.out.println("排序后的数：");
+        int kk=0;
+        int ee=0;
+        while(kk<arr.length)
+        {
+            System.out.print(arr[kk]+"   ");
+            ee++;
+            if(ee%10==0)
+                System.out.println();
+            kk++;
+        }
+    }
+}
