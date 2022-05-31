@@ -1,0 +1,50 @@
+import java.util.Random;
+public class InsertSort
+{
+    public static void main(String[] args)
+    {
+        Random ee=new Random();
+        int[] arr=new int[500];
+        int i=0;
+        while(i<arr.length)
+        {
+            arr[i]=ee.nextInt(1000);
+            i++;
+        }
+        int j=0;
+        int j1=0;
+        while(j<arr.length)
+        {
+            System.out.print(arr[j]+"   ");
+            j1++;
+            if(j1%10==0)
+                System.out.println();
+            j++;
+        }
+        int m,n,g;
+        m=1;
+        while(m<arr.length)
+        {
+            n=arr[m];
+            g=m-1;
+            while(g>=0&&arr[g]>n)
+            {
+                arr[g+1]=arr[g];
+                g--;
+            }
+            arr[g+1]=n;
+            m++;
+        }
+        System.out.println();
+        int k=0;
+        int k1=0;
+        while(k<arr.length)
+        {
+            System.out.print(arr[k]+"   ");
+            k1++;
+            if(k1%10==0)
+                System.out.println();
+            k++;
+        }
+    }
+}
